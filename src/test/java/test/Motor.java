@@ -1,27 +1,13 @@
 package test;
 
 public class Motor {
-    int numeroCilindros;
-    String tipo;
-    int registro;
+    // Atributos públicos para acceso directo
+    public int numeroCilindros;
+    public String tipo;
+    public int registro;
 
-    public Motor(int numeroCilindros, String tipo, int registro) {
-        this.numeroCilindros = numeroCilindros;
-        this.tipo = tipo;
-        this.registro = registro;
-    }
-
-    public int getNumeroCilindros() {
-        return numeroCilindros;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public int getRegistro() {
-        return registro;
-    }
+    // Constructor sin parámetros
+    public Motor() {}
 
     public void cambiarRegistro(int nuevoRegistro) {
         this.registro = nuevoRegistro;
@@ -33,6 +19,7 @@ public class Motor {
         }
     }
 }
+
 
 
 

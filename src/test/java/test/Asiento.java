@@ -1,9 +1,13 @@
 package test;
 
 public class Asiento {
-    String color;
-    int precio;
-    int registro;
+    // Atributos públicos para acceso directo
+    public String color;
+    public int precio;
+    public int registro;
+
+    // Constructor sin parámetros
+    public Asiento() {}
 
     public void cambiarColor(String nuevoColor) {
         if (nuevoColor.equals("rojo") || nuevoColor.equals("verde") || 

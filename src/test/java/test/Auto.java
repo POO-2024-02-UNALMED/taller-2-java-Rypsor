@@ -1,22 +1,28 @@
 package test;
 
 public class Auto {
-    String modelo;
-    int precio;
-    Asiento[] asientos;
-    String marca;
-    Motor motor;
-    int registro;
-    static int cantidadCreados = 0;  // Esto debe incrementarse cuando se crea un Auto
+    // Atributos públicos para acceso directo
+    public String modelo;
+    public int precio;
+    public Asiento[] asientos;
+    public String marca;
+    public Motor motor;
+    public int registro;
+    public static int cantidadCreados = 0;  // Contador de autos creados
 
-    public Auto(String modelo, int precio, Asiento[] asientos, String marca, Motor motor, int registro) {
+    // Constructor por defecto (sin parámetros)
+    public Auto() {
+        cantidadCreados++;  // Incrementar el contador de autos creados
+    }
+
+    // Método para inicializar los atributos
+    public void inicializarAuto(String modelo, int precio, Asiento[] asientos, String marca, Motor motor, int registro) {
         this.modelo = modelo;
         this.precio = precio;
         this.asientos = asientos;
         this.marca = marca;
         this.motor = motor;
         this.registro = registro;
-        cantidadCreados++;  // Incrementar el contador al crear un Auto
     }
 
     public int cantidadAsientos() {
@@ -30,7 +36,7 @@ public class Auto {
     }
 
     public String verificarIntegridad() {
-        if (motor == null || registro != motor.registro) {  // Cambiado a motor.registro
+        if (motor == null || registro != motor.registro) {  // Acceder directamente a motor.registro
             return "Las piezas no son originales";
         }
         for (Asiento asiento : asientos) {
@@ -41,3 +47,4 @@ public class Auto {
         return "Auto original";
     }
 }
+
