@@ -1,13 +1,13 @@
 package test;
 
 public class Auto {
-	private String modelo;
-    private int precio;
-    private Asiento[] asientos;
-    private String marca;
-    private Motor motor;
-    private int registro;
-    private static int cantidadCreados = 0;
+    String modelo;
+    int precio;
+    Asiento[] asientos;
+    String marca;
+    Motor motor;
+    int registro;
+    static int cantidadCreados = 0;  // Esto debe incrementarse cuando se crea un Auto
 
     public Auto(String modelo, int precio, Asiento[] asientos, String marca, Motor motor, int registro) {
         this.modelo = modelo;
@@ -16,35 +16,7 @@ public class Auto {
         this.marca = marca;
         this.motor = motor;
         this.registro = registro;
-        cantidadCreados++;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public int getPrecio() {
-        return precio;
-    }
-
-    public Asiento[] getAsientos() {
-        return asientos;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public Motor getMotor() {
-        return motor;
-    }
-
-    public int getRegistro() {
-        return registro;
-    }
-
-    public static int getCantidadCreados() {
-        return cantidadCreados;
+        cantidadCreados++;  // Incrementar el contador al crear un Auto
     }
 
     public int cantidadAsientos() {
@@ -58,15 +30,14 @@ public class Auto {
     }
 
     public String verificarIntegridad() {
-        if (motor == null || registro != motor.getRegistro()) {
+        if (motor == null || registro != motor.registro) {  // Cambiado a motor.registro
             return "Las piezas no son originales";
         }
         for (Asiento asiento : asientos) {
-            if (asiento != null && asiento.getRegistro() != registro) {
+            if (asiento != null && asiento.registro != registro) {
                 return "Las piezas no son originales";
             }
         }
         return "Auto original";
     }
-
 }

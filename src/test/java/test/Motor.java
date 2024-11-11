@@ -1,9 +1,9 @@
 package test;
 
 public class Motor {
-	private int numeroCilindros;
-    private String tipo;
-    private int registro;
+    int numeroCilindros;
+    String tipo;
+    int registro;
 
     public Motor(int numeroCilindros, String tipo, int registro) {
         this.numeroCilindros = numeroCilindros;
@@ -32,7 +32,6 @@ public class Motor {
             this.tipo = nuevoTipo;
         }
     }
-
 }
 
 
